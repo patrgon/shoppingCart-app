@@ -1,0 +1,35 @@
+.header {
+    background-color: #222831;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header_logo {
+    font-size: 16px;
+    color: #FFD369;
+  }
+  
+  .navigation {
+    margin: auto;
+    color: #FFD369;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .navigation_list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: auto;
+  }
+  
+  .navigation_list li {
+    margin: 0 10px;
+    list-style: none;
+  }
+
+  .navigation_list li:hover {
+    color: #ffff;
+  }

@@ -1,5 +1,5 @@
 import styles from './page.module.css'
-import ProductList from './components/product/ProductList'
+import ProductList from './components/productList/ProductList'
 
 export default function Home() {
   return (

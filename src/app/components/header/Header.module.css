@@ -33,3 +33,7 @@
   .navigation_list li:hover {
     color: #ffff;
   }
+
+  .icon_shoppingCart {
+    height: 32px;
+  }

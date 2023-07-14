@@ -4,6 +4,9 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchProducts } from "../../../redux/features/product/thunks";
+import Product from "../product/Product";
+
+import styles from "./ProductList.module.css";
 
 export default function ProductList() {
   const dispatch = useDispatch();
@@ -16,9 +19,8 @@ export default function ProductList() {
 
   
   return (
-    <div>
-      Product List
-      {productList.map(product => <p key={product.id}>{product.title}</p>)}
+    <div className={styles.ProductList}>
+      {productList.map(product => <Product product={product} key={product.id}/>)}
     </div>
   );
 }

@@ -27,7 +27,7 @@ export default function CartList() {
                 className={styles.table_remove}
                 onClick={() => dispatch(remove(item.id))}
               >
-                {item.id}
+                X
               </button>
             </td>
             <td>{item.title}</td>

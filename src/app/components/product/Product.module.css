@@ -13,7 +13,7 @@
     font-size: 18px;
     font-weight: 600;
     color: #6527BE;
-    height: 60px;
+    height: 90px;
 }
 
 .product_price {
@@ -22,6 +22,7 @@
     font-weight: 800;
     color: #6527BE;
     margin: 12px;
+    text-align: center;
 }
 
 .product_description {
@@ -29,6 +30,17 @@
     font-size: 14px;
     font-weight: 400;
     height: 200px;
+}
+
+.image{
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product_image {
+    height: 180px;
+    max-width: 200px;
 }
 
 .product_button {
@@ -42,4 +54,8 @@
     text-transform: uppercase;
     font-weight: 600;
     cursor: pointer;
+}
+
+.product_button:hover {
+    background-color: #38146b;
 }

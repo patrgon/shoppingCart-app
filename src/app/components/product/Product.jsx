@@ -7,7 +7,7 @@ import styles from "./Product.module.css";
 
 export default function Product({ product }) {
 
-  const { id, title, price, description } = product;
+  const { id, title, price, description, image } = product;
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
@@ -19,6 +19,9 @@ export default function Product({ product }) {
     <article className={styles.product}>
       <div className={styles.product_title}>
         <p>{title} </p>
+      </div>
+      <div className={styles.image}>
+        <img src={image} className={styles.product_image}/>
       </div>
 
       <p className={styles.product_price}>${price}</p>

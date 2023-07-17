@@ -15,6 +15,7 @@ export default function Header() {
           <li>
             <Link href="/">Inicio</Link>
           </li>
+          <input type="text" className={styles.searchBar} placeholder="Buscar productos"/>
           <li>
             <Link href="/shoppingCart">Mi Carrito (<span>{items.length}</span>)</Link>
             

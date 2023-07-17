@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../../../redux/features/cart/cartSlice";
 
 export default function CartList() {
-  const { items } = useSelector((state) => state.cart);
+  const { items} = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
     <table className={styles.table}>
@@ -15,6 +15,8 @@ export default function CartList() {
           <th> </th>
           <th>Nombre</th>
           <th>Precio</th>
+          <th>Cantidad</th>
+          <th>SubTotal</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +27,8 @@ export default function CartList() {
             </td>
             <td>{item.title}</td>
             <td>${item.price}</td>
+            <td>{item.quantity}</td>
+            <td>${item.subTotal}</td>
           </tr>
         ))}
       </tbody>

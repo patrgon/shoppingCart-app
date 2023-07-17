@@ -24,7 +24,7 @@ export const cartSlice = createSlice({
     },
     remove: (state, action) => {
       const index = state.items.findIndex((item) => item.id === action.payload);
-      state.total = state.total -state.items[index].subTotal;
+      state.total = state.total - state.items[index].subTotal;
 
       state.items = state.items.filter((item) => item.id !== action.payload);
 

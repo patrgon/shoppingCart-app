@@ -36,8 +36,8 @@ export default function CartList() {
             <td>${item.subTotal}</td>
           </tr>
         ))}
-        <tr cols>
-          <td colspan="4" className={styles.table_total_price}>TOTAL: </td>
+        <tr>
+          <td colSpan="4" className={styles.table_total_price}>TOTAL: </td>
           <td className={styles.table_total_price}>${total.toFixed(2)}</td>
         </tr>
       </tbody>

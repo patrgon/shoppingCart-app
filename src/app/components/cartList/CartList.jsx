@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { remove } from "../../../redux/features/cart/cartSlice";
 
 export default function CartList() {
-  const { items} = useSelector((state) => state.cart);
+  const { items, total } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
     <table className={styles.table}>
@@ -23,7 +23,12 @@ export default function CartList() {
         {items.map((item) => (
           <tr key={item.id}>
             <td>
-                <button className={styles.table_remove} onClick={() => dispatch(remove(item.id))}>{item.id}</button>
+              <button
+                className={styles.table_remove}
+                onClick={() => dispatch(remove(item.id))}
+              >
+                {item.id}
+              </button>
             </td>
             <td>{item.title}</td>
             <td>${item.price}</td>
@@ -31,6 +36,10 @@ export default function CartList() {
             <td>${item.subTotal}</td>
           </tr>
         ))}
+        <tr cols>
+          <td colspan="4" className={styles.table_total_price}>TOTAL: </td>
+          <td className={styles.table_total_price}>${total.toFixed(2)}</td>
+        </tr>
       </tbody>
     </table>
   );

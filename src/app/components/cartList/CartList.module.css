@@ -44,3 +44,7 @@
 .table_remove:hover{
     background-color: #fc0a52;
 }
+
+.table_total_price {
+  font-weight: 900;
+}

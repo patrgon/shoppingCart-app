@@ -14,15 +14,21 @@ export const cartSlice = createSlice({
       if (index !== -1) {
         state.items[index].quantity++;
         state.items[index].subTotal = state.items[index].quantity * state.items[index].price;
+        state.total += state.items[index].price;
       } else {
         const quantity = 1;
         const subTotal = quantity * action.payload.price;
         state.items.push({ ...action.payload, quantity, subTotal });
+        state.total += action.payload.price;
       }
     },
     remove: (state, action) => {
+      const index = state.items.findIndex((item) => item.id === action.payload);
+      state.total = state.total -state.items[index].subTotal;
 
       state.items = state.items.filter((item) => item.id !== action.payload);
+
+
     },
   },
 });

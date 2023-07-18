@@ -1,19 +1,14 @@
 "use client";
 
-import { useSelector, useDispatch } from "react-redux";
-import { add } from "../../../redux/features/cart/cartSlice";
+import {useCartActions} from "../../hooks/useCart";
 
 import styles from "./Product.module.css";
 
 export default function Product({ product }) {
 
   const { id, title, price, description, image } = product;
-  const dispatch = useDispatch();
-
-  const addProduct = (product) => {
-    alert("producto añadido! id:" + id)
-    dispatch(add(product));
-  }
+  
+  const {addProduct} = useCartActions();
 
   return (
     <article className={styles.product}>

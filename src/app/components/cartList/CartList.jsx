@@ -3,11 +3,11 @@
 import styles from "./CartList.module.css";
 
 import { useSelector, useDispatch } from "react-redux";
-import { remove } from "../../../redux/features/cart/cartSlice";
+import { useCartActions } from "../../hooks/useCart";
 
 export default function CartList() {
   const { items, total } = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  const {removeProduct} = useCartActions();
   return (
     <table className={styles.table}>
       <thead>
@@ -25,7 +25,7 @@ export default function CartList() {
             <td>
               <button
                 className={styles.table_remove}
-                onClick={() => dispatch(remove(item.id))}
+                onClick={() => removeProduct(item.id)}
               >
                 X
               </button>

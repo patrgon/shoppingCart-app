@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import { fetchProducts } from "../../../redux/features/product/thunks";
+import { fetchProducts, fetchCategories } from "../../../redux/features/product/thunks";
 import Product from "../product/Product";
 
 import styles from "./ProductList.module.css";

@@ -6,7 +6,7 @@ import styles from "./Product.module.css";
 
 export default function Product({ product }) {
 
-  const { id, title, price, description, image } = product;
+  const { id, title, price, description, image, category } = product;
   
   const {addProduct} = useCartActions();
 

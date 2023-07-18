@@ -11,3 +11,15 @@ export const fetchProducts = createAsyncThunk("product/fetch", async (_, { rejec
       });
   }
 );
+
+export const fetchCategories = createAsyncThunk("categories/fetch", async (_, { rejectWithValue }) => {
+  return fetch("https://fakestoreapi.com/products/categories")
+    .then((response) => response.json())
+    .then((data) => {return data})
+    .catch(function (error) {
+      // handle error
+      console.log("error");
+      return rejectWithValue(error.message);
+    });
+}
+);

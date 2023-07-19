@@ -1,7 +1,7 @@
 //https://fakestoreapi.com/products?limit=5
 import { createSlice } from "@reduxjs/toolkit";
 
-import { fetchProducts, fetchCategories } from "./thunks";
+import { fetchProducts, fetchCategories, fetchProductsByCategory } from "./thunks";
 
 export const productSlice = createSlice({
   name: "product",
@@ -17,8 +17,13 @@ export const productSlice = createSlice({
     });
 
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
-        console.log(action.payload);
+      console.log(action.payload);
       state.categoryList = action.payload;
+    });
+
+    builder.addCase(fetchProductsByCategory.fulfilled, (state, action) => {
+      console.log(action.payload);
+      state.productList = action.payload;
     });
 
     builder.addMatcher(

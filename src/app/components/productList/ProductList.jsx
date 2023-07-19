@@ -11,7 +11,7 @@ import styles from "./ProductList.module.css";
 export default function ProductList() {
   const dispatch = useDispatch();
   
-  const  {productList} = useSelector((state) => state.product);
+  const  {productListFilter} = useSelector((state) => state.product);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -20,7 +20,7 @@ export default function ProductList() {
   
   return (
     <div className={styles.ProductList}>
-      {productList.map(product => <Product product={product} key={product.id}/>)}
+      {productListFilter.map(product => <Product product={product} key={product.id}/>)}
     </div>
   );
 }

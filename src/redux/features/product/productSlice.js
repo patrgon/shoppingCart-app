@@ -7,23 +7,30 @@ export const productSlice = createSlice({
   name: "product",
   initialState: {
     productList: [],
+    productListFilter: [],
     categoryList: [],
   },
-  reducers: {},
+  reducers: {
+    searchProduct: (state, action) => {
+      var search = state.productList.filter(product => product.title.toLowerCase().includes(action.payload.toLowerCase()));
+
+      state.productListFilter = search;
+    }
+  },
 
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
       state.productList = action.payload;
+      state.productListFilter = action.payload;
     });
 
     builder.addCase(fetchCategories.fulfilled, (state, action) => {
-      console.log(action.payload);
       state.categoryList = action.payload;
     });
 
     builder.addCase(fetchProductsByCategory.fulfilled, (state, action) => {
-      console.log(action.payload);
       state.productList = action.payload;
+      state.productListFilter = action.payload;
     });
 
     builder.addMatcher(
@@ -41,5 +48,7 @@ export const productSlice = createSlice({
     );
   },
 });
+
+export const { searchProduct } = productSlice.actions;
 
 export default productSlice.reducer;

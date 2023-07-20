@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { add, remove } from "../../redux/features/cart/cartSlice";
+import { add, remove, addQuantity, removeQuantity } from "../../redux/features/cart/cartSlice";
 
 export const useCartActions = () => {
   const dispatch = useDispatch();
@@ -12,5 +12,13 @@ export const useCartActions = () => {
     dispatch(remove(productId));
   };
 
-  return { addProduct, removeProduct };
+  const add_quantity = (product) => {
+    dispatch(addQuantity(product));
+  };
+
+  const remove_quantity = (product) => {
+    dispatch(removeQuantity(product));
+  };
+
+  return { addProduct, removeProduct, add_quantity, remove_quantity};
 };

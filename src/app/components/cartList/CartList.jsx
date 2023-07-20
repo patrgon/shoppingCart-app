@@ -7,7 +7,7 @@ import { useCartActions } from "../../hooks/useCart";
 
 export default function CartList() {
   const { items, total } = useSelector((state) => state.cart);
-  const {removeProduct} = useCartActions();
+  const {removeProduct, add_quantity, remove_quantity} = useCartActions();
   return (
     <table className={styles.table}>
       <thead>
@@ -32,7 +32,11 @@ export default function CartList() {
             </td>
             <td>{item.title}</td>
             <td>${item.price}</td>
-            <td>{item.quantity}</td>
+            <td>
+              <button onClick={() => remove_quantity(item)}>DESCONTAR</button>
+              {item.quantity}
+              <button onClick={() => add_quantity(item)}>AUMENTAR</button>
+            </td>
             <td>${item.subTotal}</td>
           </tr>
         ))}

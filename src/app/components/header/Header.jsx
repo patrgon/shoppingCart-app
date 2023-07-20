@@ -1,12 +1,16 @@
 "use client";
 import Link from "next/link";
-import { useSelector, useDispatch } from "react-redux";
-import { searchProduct } from "../../../redux/features/product/productSlice";
+import { useSelector } from "react-redux";
+
+import { useProductActions } from "../../hooks/useProduct";
+
 import styles from "./Header.module.css";
 
 export default function Header() {
   const { items } = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+
+  const { searchProductByName } = useProductActions();
+
   return (
     <header className={styles.header}>
       <div className={styles.header_logo}></div>
@@ -19,7 +23,7 @@ export default function Header() {
           <input
             type="text"
             className={styles.searchBar}
-            onChange={(e) => dispatch(searchProduct(e.target.value))}
+            onChange={(e) => searchProductByName(e.target.value)}
             placeholder="Buscar productos"
           />
           <li>

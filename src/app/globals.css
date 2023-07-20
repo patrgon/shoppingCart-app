@@ -5,12 +5,13 @@
 }
 
 html{
-  background-color: #393E46;
+  background-color: #ffffff;
 }
 body {
   max-width: 1200px;
   overflow-x: hidden;
   margin: auto;
+  border: 1px solid #ccc;
 }
 
 a {

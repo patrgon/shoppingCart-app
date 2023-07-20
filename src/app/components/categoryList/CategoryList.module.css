@@ -1,5 +1,4 @@
 .categoryList {
-    background-color: #222831;
     display: flex;
     gap: 32px;
     width: 100%;
@@ -12,7 +11,7 @@
 }
 
 .category_item {
-    color: #ccc;
+    color: #6e5296;
     font-weight: 600;
     text-transform: uppercase;
 
@@ -20,5 +19,5 @@
 }
 
 .category_item:hover {
-    color: #ffff;
+    color: #532494;
 }

@@ -23,7 +23,7 @@ export const cartSlice = createSlice({
       }
     },
     remove: (state, action) => {
-      const item = state.items.find((item) => item.id === action.payload.id);
+      const item = state.items.find((item) => item.id === action.payload);
       state.total = state.total - item.subTotal;
 
       state.items = state.items.filter((item) => item.id !== action.payload);

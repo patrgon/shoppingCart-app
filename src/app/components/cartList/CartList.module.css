@@ -31,18 +31,43 @@
 }
 
 .table_remove {
-    background-color: #f783a6;
     width: 30px;
     padding: 4px;
-    color: #fff;
+    color: #6527be;
     font-weight: 900;
-    border-radius: 100%;
     border-style: none;
     cursor: pointer;
+    background-color: transparent;
+}
+
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+.quantity button{
+  width: 30px;
+  padding: 4px;
+  color: #3f1875;
+  font-weight: 900;
+  border-style: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.quantity button:hover{
+  width: 30px;
+  padding: 4px;
+  color: #6225b8;
+  font-weight: 900;
+  border-style: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
 .table_remove:hover{
-    background-color: #fc0a52;
+    color: #fc0a52;
 }
 
 .table_total_price {
